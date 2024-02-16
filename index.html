@@ -97,7 +97,7 @@
             });
         });
   
-        Promise.all(calcFullPathPerItems);
+        await Promise.all(calcFullPathPerItems);
         handleFiles(files);
     };
     droparea.addEventListener('drop', onDrop);
