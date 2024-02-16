@@ -89,14 +89,16 @@
                 const entry = item.webkitGetAsEntry();
                 // nullの時は何もしない
                 if (!entry) {
-                    resolve;
+                    resolve();
                     return;
                 }
                 resolve(searchFile(entry));
-                console.log("res");
+                console.log(resolve);
+            }).then((val) => {
+                console.log(val);
             });
         });
-  
+
         await Promise.all(calcFullPathPerItems);
         handleFiles(files);
     };
